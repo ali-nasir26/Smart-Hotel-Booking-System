@@ -1,0 +1,486 @@
+/* Design system (shared across the whole frontend) */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --hotel-primary: #d4af37;
+  --hotel-primary-dark: #b8912d;
+  --hotel-bg: #0f0f10;
+  --hotel-surface: #17181b;
+  --hotel-text: #f8f8f8;
+  --hotel-muted: #b8b8b8;
+  --hotel-radius: 18px;
+  --hotel-shadow: 0 14px 38px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  min-height: 100vh;
+  padding-bottom: 50px;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  background: radial-gradient(900px circle at 10% 0%, rgba(212, 175, 55, 0.14), transparent 45%),
+    var(--hotel-bg);
+  color: var(--hotel-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.card {
+  opacity: 1;
+  border: 0;
+  border-radius: var(--hotel-radius);
+  color: var(--hotel-text);
+}
+
+/* Navigation bar definitions */
+.navbar {
+  padding: 0;
+  background: rgba(10, 10, 10, 0.68) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 1em;
+  color: #f7f7f7 !important;
+  font-weight: 500;
+}
+
+.navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--hotel-primary) !important;
+}
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+
+ .navbar .navbar-nav .nav-item::after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color:rgb(169, 77, 123) ;
+  width: 0;
+  margin: 0 auto;
+  height: 4px;
+  transition: all .5s;
+ }
+ .navbar .navbar-nav .nav-item:hover::after{
+  width: 100%;
+ }
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+ @media screen and (min-width: 992px){
+  .navbar{
+  padding: 0;
+ }
+ .navbar .navbar-nav .nav-link{
+  padding: 1em 0;
+ }
+ .navbar .navbar-nav .nav-item{
+  margin: 0 1em;
+ }
+ }
+
+/* Hotel custom color (primary) */
+.btn-hotel {
+  background: linear-gradient(135deg, var(--hotel-primary), var(--hotel-primary-dark));
+  color: #111;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  padding: 0.65rem 1.15rem;
+  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-hotel:hover {
+  background: linear-gradient(135deg, var(--hotel-primary-dark), var(--hotel-primary));
+  color: #111;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(212, 175, 55, 0.28);
+  outline-color: transparent;
+  outline-style: solid;
+}
+
+.btn-hotel:focus {
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.26), 0 12px 24px rgba(212, 175, 55, 0.28);
+}
+
+.hotel-color {
+  color: var(--hotel-primary);
+}
+
+.room-price {
+  color: darkgoldenrod;
+  font-family: "Courier New", Courier, monospace;
+  font-size: medium;
+}
+
+.hotel-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--hotel-shadow);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--hotel-radius);
+}
+
+.hotel-label {
+  color: var(--hotel-primary);
+  font-weight: 800;
+}
+
+.hotel-fieldset {
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.hotel-fieldset legend {
+  float: none;
+  width: auto;
+  padding: 0 0.5rem;
+  color: var(--hotel-primary);
+  font-weight: 800;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.hotel-room-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.hotel-room-thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.room-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--hotel-muted);
+  font-weight: 600;
+  margin: 0.35rem 0;
+}
+
+.room-feature-list svg {
+  color: var(--hotel-primary);
+}
+
+.hotel-table thead th {
+  background: rgba(212, 175, 55, 0.16);
+  color: #fff;
+  border-color: rgba(212, 175, 55, 0.2) !important;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.hotel-table td,
+.hotel-table th {
+  border-color: rgba(212, 175, 55, 0.12) !important;
+  vertical-align: middle;
+}
+  .vertical-rule{
+    border-left: '0.5px solid black';
+    height: '100vh'
+  }
+
+
+
+.parallax {
+  background-image: url("./assets/images/parrall.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
+.header {
+  position: relative;
+  height: 150px;
+  background-size: cover;
+  background-image: url("./assets/images/services4.jpg");
+  background-position: center center;
+}
+.header-title {
+  color: #fff;
+  font-size: 3.2rem;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  align-content: center;
+}
+
+.parallax {
+  margin-top: 50px;
+  color: white;
+  text-shadow: 2px 2px black;
+  border-radius: var(--hotel-radius);
+  overflow: hidden;
+}
+
+.animated {
+  animation-duration: 1s;
+}
+
+.animated-texts h1 {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.animated-texts p, h1, h2 {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 60% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Header overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(18, 18, 18, 0.45));
+    z-index: 0;
+  }
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+     transform: translate(-50%, -50%);
+    color: #fff;
+    justify-content: flex-start;
+    z-index: 1;
+  }
+
+/* The header banner */
+.header-banner {
+  background-image:  url("./assets/images/services-1.jpg");
+   background-size: cover;
+  background-position: center;
+   position: relative;
+  height: 80vh;
+  overflow: hidden;
+ }
+
+.header-banner {
+  position: relative;
+  height: 500px;
+}
+
+.header-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.2), rgba(10, 10, 10, 0.6));
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-banner h1 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-banner h1 {
+    font-size: 16px;
+  }
+}
+
+/* Footer - professional hotel reservation layout */
+.footer {
+  width: 100%;
+}
+
+.footer .footer-link:hover {
+  color: var(--hotel-primary) !important;
+  opacity: 0.9;
+}
+
+.footer-social {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-social:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Luxury homepage sections */
+.hero-kicker,
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--hotel-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hero-heading,
+.luxury-section-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.hero-heading {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.08;
+}
+
+.hero-subtitle {
+  color: #efefef;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    margin: 0;
+  }
+}
+
+.hero-rating-badge {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-weight: 600;
+}
+
+.luxury-section {
+  margin: 4.5rem 0 2rem;
+}
+
+.luxury-section-title {
+  color: #fff;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.amenity-card {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.amenity-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.42);
+}
+
+.testimonial-card p {
+  color: #e6e6e6;
+}
+
+.luxury-cta {
+  margin: 4rem 0 5rem;
+  padding: 3.2rem 1.4rem;
+  border-radius: var(--hotel-radius);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(212, 175, 55, 0.08));
+}
+
+.luxury-cta h3 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #fff;
+}
+
+.luxury-cta p {
+  color: #dfdfdf;
+}
+
+.luxury-footer {
+  background: #0b0b0c;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.footer-title {
+  color: var(--hotel-primary);
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+.footer-link {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-tagline {
+  color: var(--hotel-primary);
+  font-weight: 600;
+}
+
+
+
+
